@@ -11,7 +11,7 @@ def LogIn(request):
     
     global ad,pwd
     if request.method=='POST':
-        mysql=sql.connect(host='localhost',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
+        mysql=sql.connect(host='database.cjsvui335bah.us-east-1.rds.amazonaws.com',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
         cursor=mysql.cursor()
         ad=request.POST.get('Aadhaar_no')
         pwd=request.POST.get('password')
@@ -57,7 +57,7 @@ def vote(request):
     aid=request.session.get("adharsession")
     #print(request.GET.get("party"));
     #print(request.session.get("adharsession"))  
-    mysql=sql.connect(host='localhost',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
+    mysql=sql.connect(host='database.cjsvui335bah.us-east-1.rds.amazonaws.com',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
     cursor=mysql.cursor() 
     c="update registration set party='{}',status=1 where adharid='{}'".format(party,aid)
     cursor.execute(c)
