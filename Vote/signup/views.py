@@ -20,7 +20,7 @@ gn=''
 def Registration(request):
     global fn,ln,em,ad,dob,pwd,cpwd,gn
     if request.method=='POST':
-        mysql=sql.connect(host='localhost',user='root',password="Raghav@123",database='web_python_votingsystem')
+        mysql=sql.connect(host='database.cjsvui335bah.us-east-1.rds.amazonaws.com',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
         cursor=mysql.cursor()
         res=request.POST
         for key,value in res.items():
