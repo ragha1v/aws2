@@ -72,7 +72,7 @@ def adminlogin(request):
 def adminlogincheck(request):
     global ad,pwd
     if request.method=='POST':
-        mysql=sql.connect(host='localhost',user='root',password="root@1234",database='web_python_votingsystem')
+        mysql=sql.connect(host='database.cjsvui335bah.us-east-1.rds.amazonaws.com',user='admin',password="RaghavGoyal123",database='web_python_votingsystem')
         cursor=mysql.cursor()
         ad=request.POST.get('admin')
         pwd=request.POST.get('password')
